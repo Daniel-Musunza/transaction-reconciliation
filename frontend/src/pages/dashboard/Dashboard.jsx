@@ -479,6 +479,37 @@ function Dashboard() {
                         </div>
                     </div> */}
                     <div className="dash-main">
+                    <div className="dash-transaction">
+                            <div className="transactions-graph">
+                                <p>Transaction Graph</p>
+                                <LineChart width={600} height={300} backgroundColor='white' data={updatedMonthlyData}>
+                                    <CartesianGrid strokeDasharray="3 3" />
+                                    <XAxis dataKey="name"  label={{ value: 'Month', position: 'insideBottom', offset: -10 }}/>
+                                    <YAxis label={{value: 'Money in Ksh', position: 'insideLeft', angle:'-90' }}/>
+                                    <Tooltip />
+                                    <Legend />
+                                    <Line type="monotone" dataKey="value" stroke="#8884d8"  />
+                                </LineChart>
+                            </div>
+                            <div className="payment-mode">
+                                <div className="mode-rate">
+                                    <div className="bank-transactions">
+                                        <p>Bank</p>
+                                        <div className="bank-circle" data-progress={isNaN(bankPercentage) ? 0 : bankPercentage} style={{ '--progress': `${isNaN(bankDegrees)? 0 : bankDegrees}deg` }}>
+                                            {/* 36% */}
+                                        </div>
+                                        <p>Ksh {totalBankMoney}</p>
+                                    </div>
+                                    <div className="mobile-transactions">
+                                        <p>Mpesa</p>
+                                        <div className="mobile-circle" data-progress={isNaN(mpesaPercentage) ? 0 : mpesaPercentage} style={{ '--progress': `${isNaN(mpesaDegrees) ? 0 : mpesaDegrees}deg` }}>
+                                            {/* 50% */}
+                                        </div>
+                                        <p>Ksh {totalMpesaMoney}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div className="main-card">
                             <div className="cards">
                                 <div className="transaction-card">
@@ -614,37 +645,7 @@ function Dashboard() {
                             </div>
                             
                         </div>
-                        <div className="dash-transaction">
-                            <div className="transactions-graph">
-                                <p>Transaction Graph</p>
-                                <LineChart width={600} height={300} backgroundColor='white' data={updatedMonthlyData}>
-                                    <CartesianGrid strokeDasharray="3 3" />
-                                    <XAxis dataKey="name"  label={{ value: 'Month', position: 'insideBottom', offset: -10 }}/>
-                                    <YAxis label={{value: 'Money in Ksh', position: 'insideLeft', angle:'-90' }}/>
-                                    <Tooltip />
-                                    <Legend />
-                                    <Line type="monotone" dataKey="value" stroke="#8884d8"  />
-                                </LineChart>
-                            </div>
-                            <div className="payment-mode">
-                                <div className="mode-rate">
-                                    <div className="bank-transactions">
-                                        <p>Bank</p>
-                                        <div className="bank-circle" data-progress={isNaN(bankPercentage) ? 0 : bankPercentage} style={{ '--progress': `${isNaN(bankDegrees)? 0 : bankDegrees}deg` }}>
-                                            {/* 36% */}
-                                        </div>
-                                        <p>Ksh {totalBankMoney}</p>
-                                    </div>
-                                    <div className="mobile-transactions">
-                                        <p>Mpesa</p>
-                                        <div className="mobile-circle" data-progress={isNaN(mpesaPercentage) ? 0 : mpesaPercentage} style={{ '--progress': `${isNaN(mpesaDegrees) ? 0 : mpesaDegrees}deg` }}>
-                                            {/* 50% */}
-                                        </div>
-                                        <p>Ksh {totalMpesaMoney}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div className="table-info">
                                 <div className="download-table-info">
                                     <p>Download Transaction Data here...</p>
