@@ -17,10 +17,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors(
   {
    
-      origin: ["http://localhost:3000"],
+      origin: ["https://transaction-reconciliation.vercel.app"],
       methods: ["POST", "GET", "PUT", "DELETE"]
   }
 ));
+// app.use(cors(
+//   {
+   
+//       origin: ["http://localhost:3001"],
+//       methods: ["POST", "GET", "PUT", "DELETE"]
+//   }
+// ));
 
 
 app.use('/api/transactions', require('./routes/transactionRoutes'));

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { addtransaction } from '../features/transactions/transactionSlice';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import Spinner from '../components/Spinner';
+import { addtransaction } from '../features/transactions/transactionSlice';
 
 function TestForm() {
   const dispatch = useDispatch();
@@ -37,6 +37,7 @@ function TestForm() {
     const userData = {
       policy_number,
       amount,
+      modeOfPay: e.target.modeOfPay.value
     };
 
     dispatch(addtransaction(userData));
@@ -75,8 +76,14 @@ function TestForm() {
                 onChange={onChange}
               />
             </div>
+            <div className="form-group">
+              <select name="modeOfPay" id="mode" className='form-control'>
+                <option value="Mpesa">Mpesa</option>
+                <option value="Bank">Bank</option>
+              </select>
+            </div>
 
-            <div className='form-group'>
+            <div className='form-group' id='submit-transact'>
               <button type='submit' className='btn btn-block'>
                 Submit
               </button>

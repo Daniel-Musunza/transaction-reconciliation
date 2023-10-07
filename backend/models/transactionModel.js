@@ -25,6 +25,9 @@ const transactionSchema = mongoose.Schema(
     amount: {
       type: Number
     },
+    modeOfPay:{
+      type: String
+    }
   },
   {
     timestamps: true,

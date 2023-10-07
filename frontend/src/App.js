@@ -11,6 +11,7 @@ import CommercialVC from './pages/CommercialVC'
 import CommercialVTP from './pages/CommercialVTP'
 import Header from './components/Header'
 import TestForm from './pages/TestForm'
+import Home from './pages/dashboard/Dashboard'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           
           <Routes>
             <Route path='/' element={<Login />} />
+            <Route path='/home' element= {<Home />} />
             <Route path='/register' element={<Register />} />
             <Route path='/payment' element={<TestForm />} />
             <Route path='/health' element={<Health />} />

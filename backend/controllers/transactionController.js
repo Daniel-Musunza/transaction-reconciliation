@@ -51,6 +51,7 @@ const settransaction = asyncHandler(async (req, res) => {
   const transaction = await Transaction.create({
     policy_number: req.body.policy_number,
     amount: req.body.amount,
+    modeOfPay: req.body.modeOfPay,
     date_of_payment: new Date().toISOString(),
     client_name: user.name,
     description,
@@ -60,6 +61,7 @@ const settransaction = asyncHandler(async (req, res) => {
   res.status(200).json(transaction);
 });
 
+//total transaction according to background
 
 
 

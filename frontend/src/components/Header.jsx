@@ -41,22 +41,25 @@ function Header() {
               <div className='middle-links'>
                 <ul>
                   <li>
+                    <Link to='/home'>Home</Link>
+                  </li>
+                  <li>
                     <Link to='/health'>Health</Link>
                   </li>
                   <li>
                     <Link to='/property'>Property</Link>
                   </li>
                   <li>
-                    <Link to='/privatevc'>PrivateVehicle/Comprehensive</Link>
+                    <Link to='/privatevc'>PVC</Link>
                   </li>
                   <li>
-                    <Link to='/privatevtp'>PrivateVehicle/Third Party</Link>
+                    <Link to='/privatevtp'>PVTP</Link>
                   </li>
                   <li>
-                    <Link to='/commercialvc'>Commercial Vehicle/ Comprehensive</Link>
+                    <Link to='/commercialvc'>CVC</Link>
                   </li>
                   <li>
-                    <Link to='/commercialvtp'>Commercial Vehicle/third Party</Link>
+                    <Link to='/commercialvtp'>CVTP</Link>
                   </li>
                   <li>
                     <Link to='/register'>New Client</Link>
@@ -113,16 +116,16 @@ function Header() {
                     <Link to='/property'>Property</Link>
                   </li>
                   <li>
-                    <Link to='/privatevc'>PrivateVehicle/Comprehensive</Link>
+                    <Link to='/privatevc'>PVC</Link>
                   </li>
                   <li>
-                    <Link to='/privatevtp'>PrivateVehicle/Third Party</Link>
+                    <Link to='/privatevtp'>PVTP</Link>
                   </li>
                   <li>
-                    <Link to='/commercialvc'>Commercial Vehicle/ Comprehensive</Link>
+                    <Link to='/commercialvc'>CVC</Link>
                   </li>
                   <li>
-                    <Link to='/commercialvtp'>Commercial Vehicle/third Party</Link>
+                    <Link to='/commercialvtp'>CVTP</Link>
                   </li>
                   <li>
                     <Link to='/register'>New Client</Link>
@@ -130,7 +133,6 @@ function Header() {
                 </ul>
             </div>
           )}
-          
         </nav>
       </div>
     </>
